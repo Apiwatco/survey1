@@ -1,0 +1,120 @@
+<h1> Survey = Index of Questions </h1>
+
+
+<p> For New Survey go to localhost:3000/surveys/new </p>
+
+<h2> Leadership Complexity Questions </h2>
+<h4> Survey Instructions: I would describe myself as being skilled in the following...(1 = Strongly Disagree, 7 = Strongly Agree)</h4>
+
+
+<%= form_for @question do |f| %>
+		<div>
+			<%= f.label :question_name, 'Experiments with new concepts and procedures.' %>
+		</div>
+		<div>
+			<% ['Strongly Disagree', 'Disagree', 'Slightly Disagree', 'Neither', 'Slightly Agree', 'Agree', 'Strongly Agree'].each do |answer_content| %>
+			<br><%= radio_button_tag 'answer_content', answer_content, @answer_content == answer_content %>
+			<%= answer_content.humanize %>
+			<% end %>
+		</div>
+<% end %>
+
+<%= form_for @question do |f| %>
+<div>
+	<%= f.label :question_name, 'Comes up with inventive ideas.' %>
+	</div>
+<div>
+	<% ['Strongly Disagree', 'Disagree', 'Slightly Disagree', 'Neither', 'Slightly Agree', 'Agree', 'Strongly Agree'].each do |answer_content| %>
+	<br><%= radio_button_tag 'answer_content', answer_content, @answer_content == answer_content %>
+	<%= answer_content.humanize %>
+	<% end %>
+</div>
+<% end %>
+
+
+<%= form_for @question do |f| %>
+<div>
+	<%= f.label :question_name, 'Does problem solving in creative, clever ways.' %>
+	</div>
+<div>
+	<% ['Strongly Disagree', 'Disagree', 'Slightly Disagree', 'Neither', 'Slightly Agree', 'Agree', 'Strongly Agree'].each do |answer_content| %>
+	<br><%= radio_button_tag 'answer_content', answer_content, @answer_content == answer_content %>
+	<%= answer_content.humanize %>
+	<% end %>
+</div>
+<% end %>
+
+<%= form_for @question do |f| %>
+<div>
+	<%= f.label :question_name, 'Searches for innovations and potential improvements.' %>
+	</div>
+<div>
+	<% ['Strongly Disagree', 'Disagree', 'Slightly Disagree', 'Neither', 'Slightly Agree', 'Agree', 'Strongly Agree'].each do |answer_content| %>
+	<br><%= radio_button_tag 'answer_content', answer_content, @answer_content == answer_content %>
+	<%= answer_content.humanize %>
+	<% end %>
+</div>
+<% end %>
+
+<%= form_for @question do |f| %>
+<div>
+	<%= f.label :question_name, 'Initiating bold projects.' %>
+	</div>
+<div>
+	<% ['Strongly Disagree', 'Disagree', 'Slightly Disagree', 'Neither', 'Slightly Agree', 'Agree', 'Strongly Agree'].each do |answer_content| %>
+	<br><%= radio_button_tag 'answer_content', answer_content, @answer_content == answer_content %>
+	<%= answer_content.humanize %>
+	<% end %>
+</div>
+<% end %>
+
+<%= form_for @question do |f| %>
+<div>
+	<%= f.label :question_name, 'Starting ambitious programs.' %>
+	</div>
+<div>
+	<% ['Strongly Disagree', 'Disagree', 'Slightly Disagree', 'Neither', 'Slightly Agree', 'Agree', 'Strongly Agree'].each do |answer_content| %>
+	<br><%= radio_button_tag 'answer_content', answer_content, @answer_content == answer_content %>
+	<%= answer_content.humanize %>
+	<% end %>
+</div>
+<% end %>
+
+
+<%= form_for @question do |f| %>
+<div>
+	<%= f.label :question_name, 'Launching important new efforts.' %>
+	</div>
+<div>
+	<% ['Strongly Disagree', 'Disagree', 'Slightly Disagree', 'Neither', 'Slightly Agree', 'Agree', 'Strongly Agree'].each do |answer_content| %>
+	<br><%= radio_button_tag 'answer_content', answer_content, @answer_content == answer_content %>
+	<%= answer_content.humanize %>
+	<% end %>
+</div>
+<% end %>
+
+<%= form_for @question do |f| %>
+<div>
+	<%= f.label :question_name, 'Exerts upward influence in the organization.' %>
+	</div>
+<div>
+	<% ['Strongly Disagree', 'Disagree', 'Slightly Disagree', 'Neither', 'Slightly Agree', 'Agree', 'Strongly Agree'].each do |answer_content| %>
+	<br><%= radio_button_tag 'answer_content', answer_content, @answer_content == answer_content %>
+	<%= answer_content.humanize %>
+	<% end %>
+</div>
+<% end %>
+
+<%= form_for @question do |f| %>  
+		<div>
+			<%= f.label :question_name, 'Influences decisions made at higher levels.' %>
+		</div>
+		<div>
+			<% ['Strongly Disagree', 'Disagree', 'Slightly Disagree', 'Neither', 'Slightly Agree', 'Agree', 'Strongly Agree'].each do |answer_content| %>
+			<br><%= radio_button_tag 'answer_content', answer_content, @answer_content == answer_content %>
+			<%= answer_content.humanize %>
+			<% end %>
+		</div>
+<% end %>
+
+<%= render partial: 'question' %>

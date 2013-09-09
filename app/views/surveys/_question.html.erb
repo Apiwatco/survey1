@@ -1,0 +1,14 @@
+
+
+<%= form_for @question do |f| %>  
+		<div>
+			<%= f.label :question_name, 'Sample Question ### #### #### ####' %>
+		</div>
+		<div>
+			<% ['Strongly Disagree', 'Disagree', 'Slightly Disagree', 'Neither', 'Slightly Agree', 'Agree', 'Strongly Agree'].each do |answer_content| %>
+			<br><%= radio_button_tag 'answer_content', answer_content, @answer_content == answer_content %>
+			<%= answer_content.humanize %>
+			<% end %>
+		</div>
+	
+<% end %>
