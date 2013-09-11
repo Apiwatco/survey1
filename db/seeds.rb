@@ -3,5 +3,17 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+#   cities = City.create([{ name:'Chicago' }, { name:'Copenhagen' }])
+#   Mayor.create(name:'Emanuel', city: cities.first)
+
+Question.create([
+
+{question_name: 'Comes up with inventive ideas.'},
+{question_name: 'Does problem solving in creative, clever ways.'},
+{question_name: 'Searches for innovations and potential improvements.'},
+{question_name: 'Initiating bold projects.'},
+{question_name: 'Starting ambitious programs.'},
+{question_name: 'Launching important new efforts.'}
+
+	])
+
