@@ -4,6 +4,7 @@ Survey::Application.routes.draw do
   #root 'surveys#index'
   #root 'devise/sessions#new'
   root 'pages#home'
+  get '/about' => 'pages#about'
 
   resources :answers
 
