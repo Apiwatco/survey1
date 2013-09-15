@@ -1,7 +1,7 @@
 		<div>
-			<% @answers.each do |answer_content| %>
+			<% @choices.each do |answer_name| %>
 			<br>
-			<%= radio_button_tag "answer_content_hash[#{question.id}]", answer_content %>
-			<%= answer_content.humanize %>
+			<%= radio_button_tag "answer_name_hash[#{question.id}]", answer_name %>
+			<%= answer_name.humanize %>
 			<% end %>
 		</div>
