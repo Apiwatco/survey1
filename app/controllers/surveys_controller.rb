@@ -37,6 +37,7 @@ class SurveysController < ApplicationController
 	def submission
 		params['answer_name_hash'].each do |question_id, answer|
 				# question = Question.find(question_id)
+				#answer = Answer.new(question_id: question_id, answer_name: answer, user_id: 1)
 				answer = Answer.new(question_id: question_id, answer_name: answer, user_id: 1)
 				answer.save!
 			end
