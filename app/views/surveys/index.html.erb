@@ -1,20 +1,24 @@
-<h1> Survey = Index of Questions </h1>
+<div class="hero-unit">
+
+		<h1> Survey = Index of Questions </h1>
 
 
-<p> For New Survey go to localhost:3000/surveys/new </p>
+		<p> For New Survey go to localhost:3000/surveys/new </p>
 
-<h2> Leadership Complexity Questions </h2>
-<h4> Survey Instructions: I would describe myself as being skilled in the following...(1 = Strongly Disagree, 7 = Strongly Agree)</h4>
-
-
-<%= form_tag surveys_submission_path do |f| %>
+		<h2> Leadership Complexity Questions </h2>
+		<h4> Survey Instructions: I would describe myself as being skilled in the following...(1 = Strongly Disagree, 7 = Strongly Agree)</h4>
 
 
-	<% @questions.each do |question| %>
-		<%= question.question_name %>
-		<%= render partial: 'question', :locals => { :question => question } %>
-	<%end%>
+		<%= form_tag surveys_submission_path do |f| %>
 
 
-<%= submit_tag('Submit') %>
-<%end%>
+			<% @questions.each do |question| %>
+				<%= question.question_name %>
+				<%= render partial: 'question', :locals => { :question => question } %>
+			<%end%>
+
+
+		<%= submit_tag('Submit') %>
+		<%end%>
+
+</div>

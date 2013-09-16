@@ -1,0 +1,24 @@
+/* Font can be changed */
+$baseFontFamily: Oxygen;
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+
+$btnPrimaryBackground: SpringGreen;
+$navbarBackground: SpringGreen;
+
+@import 'bootstrap';
+
+body {
+	padding-top: 60px;
+}
+
+@import 'bootstrap-responsive';
+
+.footer {
+
+	margin-top: 150px;
+	color: $grayLight;
+	a {
+		color: blue;
+	}
+}
+
