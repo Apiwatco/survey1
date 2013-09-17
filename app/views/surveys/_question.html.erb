@@ -1,3 +1,8 @@
-	
 
-<!-- radio_button_tag -->
+		<div>
+			<% @choices.each do |answer_name| %>
+			<br>
+			<%= radio_button_tag "answer_name_hash[#{question.id}]", answer_name %>
+			<%= answer_name.humanize %>
+			<% end %>
+		</div>

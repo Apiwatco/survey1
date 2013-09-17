@@ -1,7 +1,11 @@
 Survey::Application.routes.draw do
   
   devise_for :users
-  root 'surveys#index'
+  #root 'surveys#index'
+  #root 'devise/sessions#new'
+  root 'pages#home'
+  get '/about' => 'pages#about'
+
   resources :answers
 
   resources :questions
@@ -16,6 +20,8 @@ Survey::Application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
 
   post 'surveys/submission' => 'surveys#submission'
+  #get '/surveys/users/sign_out' => 'devise/sessions#destroy'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
