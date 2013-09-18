@@ -13,9 +13,11 @@
 
 		<%= form_tag surveys_submission_path do |f| %>
 
-
+			
 			<% @questions.each do |question| %>
+			<div class="question">
 				<%= question.question_name %>
+			</div>
 				<%= render partial: 'question', :locals => { :question => question } %>
 			<%end%>
 

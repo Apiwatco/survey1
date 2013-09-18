@@ -1,3 +1,12 @@
-<h1> Submission Page </h1>
+<!-- Not quite working -->
+<% if user_signed_in? %>
 
-<%= @test_data_from_form %>
+	<h1> Submission Page </h1>
+
+	<%= @test_data_from_form %>
+
+<% else %>
+
+	<h1> You must login to submit answers </h1>
+
+<% end %>
