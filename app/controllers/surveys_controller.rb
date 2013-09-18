@@ -43,6 +43,15 @@ class SurveysController < ApplicationController
 			end
 
 			@test_data_from_form = params
+			@whole = params['answer_name_hash']
+			#@test_data_from_form = params['answer_name_hash'].map { |child| child['question_id'.to_i]['answer']}
+			# @test_data_from_form = params['answer_name_hash'].map do |child| 
+			# 	child['question_id'.to_i]
+			# 	child['answer_name'.to_i]
+			#end
+			# @test_data_from_form = @answer.map do |child|
+			# 	child['question_id']
+			# end
 	end
 
 end
