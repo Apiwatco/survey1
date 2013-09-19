@@ -8,6 +8,7 @@
 
 Question.create([
 
+{question_name: 'Experiments with new concepts and procedures.'},
 {question_name: 'Comes up with inventive ideas.'},
 {question_name: 'Does problem solving in creative, clever ways.'},
 {question_name: 'Searches for innovations and potential improvements.'},

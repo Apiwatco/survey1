@@ -5,6 +5,12 @@
 
 	<p><%= @test_data_from_form %></p>
 	<p><%= @whole %></p>
+	<p>User Id: <%= current_user.id %></p>
+
+	<p>How come this one<%= Answer.where(current_user.id) %></p>
+	<p>Not same as this one?<%= @test %></p>
+
+	
 
 <% else %>
 

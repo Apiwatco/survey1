@@ -7,7 +7,7 @@ class SurveysController < ApplicationController
 		#@survey = Survey.all
 		#@survey = Survey.new
 		
-		@question = Question.new
+		#@question = Question.new
 		@questions = Question.all
 		@choices = ['Strongly Disagree', 'Disagree', 'Slightly Disagree', 'Neither', 'Slightly Agree', 'Agree', 'Strongly Agree']
 	end
@@ -44,6 +44,22 @@ class SurveysController < ApplicationController
 
 			@test_data_from_form = params
 			@whole = params['answer_name_hash']
+
+			@test = Answer.where(current_user.id)
+
+			def score
+				if current_user.answer = "Strongly Disagree"
+					1
+					elsif curren_user.answer = "Strongly Agree"
+						2
+					else
+						puts "nope."
+					end
+				end
+
+
+
+
 			#@test_data_from_form = params['answer_name_hash'].map { |child| child['question_id'.to_i]['answer']}
 			# @test_data_from_form = params['answer_name_hash'].map do |child| 
 			# 	child['question_id'.to_i]
@@ -52,6 +68,20 @@ class SurveysController < ApplicationController
 			# @test_data_from_form = @answer.map do |child|
 			# 	child['question_id']
 			# end
+
+			#calculate_score
 	end
+
+	# def calculate_score
+	# 	score = 1
+	# 	score *= 1 if answer == 'Strongly Disagree'
+	# 	score *= 2 if answer_name == 'Disagree'
+	# 	score *= 3 if answer_name == 'Slightly Disagree'
+	# 	score *= 4 if answer_name == 'Neither'
+	# 	score *= 5 if answer_name == 'Slightly Agree'
+	# 	score *= 6 if answer_name == 'Agree'
+	# 	score *= 7 if answer_name == 'Strongly Agree'
+
+	# end
 
 end
