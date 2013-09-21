@@ -15,6 +15,7 @@ gem 'bootstrap-sass', '~> 2.3.2.1'
 group :development do
 	#Use sqlite 3 as teh database for Active Recrod
 	gem 'sqlite3'
+	gem 'annotate'
 end
 
 group :production do

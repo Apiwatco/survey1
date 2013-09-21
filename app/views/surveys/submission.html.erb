@@ -10,6 +10,8 @@
 	<p>How come this one<%= Answer.where(current_user.id) %></p>
 	<p>Not same as this one?<%= @test %></p>
 
+	<p> Your score is <%= @user.calculate_innovator_score%></P>
+
 	
 
 <% else %>

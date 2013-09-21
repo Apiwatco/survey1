@@ -8,13 +8,13 @@
 
 Question.create([
 
-{question_name: 'Experiments with new concepts and procedures.'},
-{question_name: 'Comes up with inventive ideas.'},
-{question_name: 'Does problem solving in creative, clever ways.'},
-{question_name: 'Searches for innovations and potential improvements.'},
-{question_name: 'Initiating bold projects.'},
-{question_name: 'Starting ambitious programs.'},
-{question_name: 'Launching important new efforts.'}
+{question_name: 'Experiments with new concepts and procedures.', role_type: 'innovator'},
+{question_name: 'Comes up with inventive ideas.', role_type: 'innovator'},
+{question_name: 'Does problem solving in creative, clever ways.', role_type: 'innovator'},
+{question_name: 'Searches for innovations and potential improvements.', role_type: 'innovator'},
+{question_name: 'Initiating bold projects.', role_type: 'innovator'},
+{question_name: 'Starting ambitious programs.', role_type: 'innovator'},
+{question_name: 'Launching important new efforts.', role_type: 'innovator'}
 
 	])
 
