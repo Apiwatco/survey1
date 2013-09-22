@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
 		answers = self.innovator_answers
 		score_array = answers.map{|answer| answer.answer_score}
 		score_array.inject{ |sum, el| sum + el }.to_f / score_array.size
-		
-
   end
+
+  
 end
