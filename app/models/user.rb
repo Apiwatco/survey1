@@ -32,8 +32,40 @@ class User < ActiveRecord::Base
   def calculate_innovator_score
 		answers = self.innovator_answers
 		score_array = answers.map{|answer| answer.answer_score}
-		score_array.inject{ |sum, el| sum + el }.to_f / score_array.size
+		score_array.inject{ |sum, el| sum + el }.to_f / score_array.size 
   end
 
-  
+  def broker_answers
+  	user_answers = self.answers.where(role_type: "broker")
+  	return user_answers
+  end
+
+  def calculate_broker_score
+  	answers = self.broker_answers
+  	score_array = answers.map{|answer| answer.answer_score}
+  	score_array.inject{ |sum, el| sum + el }.to_f / score_array.size 
+  end
+
+  def producer_answers
+  	user_answers = self.answers.where(role_type: "producer")
+  	return user_answers
+  end
+
+  def calculate_producer_score
+  	answers = self.producer_answers
+  	score_array = answers.map{ |answer| answer.answer_score}
+  	score_array.inject{ |sum, el| sum + el }.to_f / score_array.size 
+  end
+
+  def director_answers
+  	user_answers = self.answers.where(role_type: "director")
+  	return user_answers
+  end
+
+  def calculate_director_score
+  	answers = self.director_answers
+  	score_array = answers.map{ |answer| answer.answer_score}
+  	score_array.inject{ |sum, el| sum + el }.to_f / score_array.size
+  end
+
 end
