@@ -68,4 +68,50 @@ class User < ActiveRecord::Base
   	score_array.inject{ |sum, el| sum + el }.to_f / score_array.size
   end
 
+  def monitor_answers
+    user_answers = self.answers.where(role_type: "monitor")
+    return user_answers
+  end
+
+  def calculate_monitor_score
+    answers = self.monitor_answers
+    score_array = answers.map{ |answer| answer.answer_score}
+    score_array.inject{ |sum, el| sum + el}.to_f / score_array.size
+  end
+
+  def coordinator_answers
+    user_answers = self.answers.where(role_type: "coordinator")
+    return user_answers
+  end
+
+  def calculate_coordinator_score
+    answers = self.coordinator_answers
+    score_array = answers.map{ |answer| answer.answer_score}
+    score_array.inject{ |sum, el| sum + el}.to_f / score_array.size
+  end
+
+  def facilitator_answers
+    user_answers = self.answers.where(role_type: "facilitator")
+    return user_answers
+  end
+
+  def calculate_facilitator_score
+    answers = self.facilitator_answers
+    score_array = answers.map{ |answer| answer.answer_score}
+    score_array.inject{ |sum, el| sum + el}.to_f / score_array.size
+  end
+
+  def mentor_answers
+    user_answers = self.answers.where(role_type: "mentor")
+    return user_answers
+  end
+
+  def calculate_mentor_score
+    answers = self.mentor_answers
+    score_array = answers.map{ |answer| answer.answer_score}
+    score_array.inject{ |sum, el| sum + el}.to_f / score_array.size
+  end
+
+
+
 end
