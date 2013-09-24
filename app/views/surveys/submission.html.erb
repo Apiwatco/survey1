@@ -1,4 +1,4 @@
-<!-- Not quite working -->
+<!-- Not quite working;   require '_graph' --> 
 <% if user_signed_in? %>
 
 <div class="hero-unit">
@@ -6,26 +6,26 @@
 
 	<p><%= @test_data_from_form %></p>
 	<p><%= @whole %></p>
-	
+
 	<p><div class="id"> User Id: <%= current_user.id %> </div> </p>
 
 
 
-<p><div class="role"> Your <em>Innovator</em> score is <%= @user.calculate_innovator_score%> </div> </p>
+<p><div class="role"> Your <em>Innovator</em> score is <%= @user.calculate_innovator_score.round(2)%> </div> </p>
 
-<p><div class="role"> Your <em>Broker</em> score is <%= @user.calculate_broker_score%> </div> </p>
+<p><div class="role"> Your <em>Broker</em> score is <%= @user.calculate_broker_score.round(2)%> </div> </p>
 
-<p><div class="role"> Your <em>Producer</em>  score is <%= @user.calculate_producer_score%> </div> </p>
+<p><div class="role"> Your <em>Producer</em>  score is <%= @user.calculate_producer_score.round(2)%> </div> </p>
 
-<p><div class="role"> Your <em>Director</em>  score is <%= @user.calculate_director_score%> </div> </p>
+<p><div class="role"> Your <em>Director</em>  score is <%= @user.calculate_director_score.round(2)%> </div> </p>
 
-<p><div class="role"> Your <em>Monitor</em>  score is <%= @user.calculate_monitor_score%> </div> </p>
+<p><div class="role"> Your <em>Monitor</em>  score is <%= @user.calculate_monitor_score.round(2)%> </div> </p>
 
-<p><div class="role"> Your <em>Coordinator</em>  score is <%= @user.calculate_coordinator_score%> </div> </p>
+<p><div class="role"> Your <em>Coordinator</em>  score is <%= @user.calculate_coordinator_score.round(2)%> </div> </p>
 
-<p><div class="role"> Your <em>Facilitator</em>  score is <%= @user.calculate_facilitator_score%> </div> </p>
+<p><div class="role"> Your <em>Facilitator</em>  score is <%= @user.calculate_facilitator_score.round(2)%> </div> </p>
 
-<p><div class="role"> Your <em>Mentor</em>  score is <%= @user.calculate_mentor_score%> </div> </p>
+<p><div class="role"> Your <em>Mentor</em>  score is <%= @user.calculate_mentor_score.round(2)%> </div> </p>
 
 
 </div>
