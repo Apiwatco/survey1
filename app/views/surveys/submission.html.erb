@@ -1,5 +1,7 @@
 <!-- Not quite working;   require '_graph' --> 
-<% if user_signed_in? %>
+
+
+
 
 <div class="hero-unit">
 	<h1> Submission Page </h1>
@@ -30,8 +32,5 @@
 
 </div>
 
-<% else %>
+<%= render partial: 'graph' %>
 
-	<h1> You must login to submit answers </h1>
-
-<% end %>

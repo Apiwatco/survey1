@@ -1,27 +1,37 @@
-_graph.html.erb
 
- <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-    <script type="text/javascript">
-      google.load("visualization", "1", {packages:["corechart"]});
-      google.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Persona_Type', 'RATING'],
-          ['Broker',     <%= @user.calculate_broker_score%>],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7],
-          ['asdfsd',   3],
+<html>
+  <head>
+       <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+          <script type='text/javascript'>
+            google.load('visualization', '1', {packages:['gauge']});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+              var data = google.visualization.arrayToDataTable([
+                ['Label', 'Value'],
+                ['Innovator', <%= @user.calculate_innovator_score.round(2)%>],
+                ['Broker', <%= @user.calculate_broker_score.round(2)%>],
+                ['Producer', <%= @user.calculate_producer_score.round(2)%>],
+                ['Director', <%= @user.calculate_director_score.round(2)%>],
+                ['Monitor', <%= @user.calculate_monitor_score.round(2)%>],
+                ['Coordinator', <%= @user.calculate_coordinator_score.round(2)%>]
+                ['Facilitator', <%= @user.calculate_facilitator_score.round(2)%>],
+                ['Mentor', <%= @user.calculate_mentor_score.round(2)%>]
+                
+              ]);
 
-        ]);
+              var options = {
+                width: 400, height: 120,
+                redFrom: 90, redTo: 100,
+                yellowFrom:75, yellowTo: 90,
+                minorTicks: 5
+              };
 
-        var options = {
-          title: 'My Daily Activities',
-          pieHole: 0.4,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-      }
-    </script>
+              var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+              chart.draw(data, options);
+            }
+          </script>
+     </head>
+  <body>
+    <div id='chart_div'></div>
+  </body>
+</html>
