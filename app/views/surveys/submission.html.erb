@@ -1,6 +1,6 @@
 <!-- Not quite working;   require '_graph' --> 
 
- require 'graph' 
+
 
 
 <div class="hero-unit">
@@ -32,5 +32,28 @@
 
 </div>
 
-<%= render partial: 'graph' %>
+<canvas id="myChart" width="700" height="700"></canvas>
+	<script>
+					var data = {
+				labels : ["Innovator","Broker","Producer","Director","Monitor","Coordinator","Facilitator","Mentor"],
+				datasets : [
+					{
+						fillColor : "rgba(220,220,220,0.5)",
+						strokeColor : "rgba(220,220,220,1)",
+						pointColor : "rgba(220,220,220,1)",
+						pointStrokeColor : "#fff",
+						data : [4,4,4,4,4,4,4,4]
+					},
+					{
+						fillColor : "rgba(151,187,205,0.5)",
+						strokeColor : "rgba(151,187,205,1)",
+						pointColor : "rgba(151,187,205,1)",
+						pointStrokeColor : "#fff",
+						data : [<%= @user.calculate_innovator_score.round(2)%>,<%= @user.calculate_broker_score.round(2)%>,<%= @user.calculate_producer_score.round(2)%>,<%= @user.calculate_director_score.round(2)%>,<%= @user.calculate_monitor_score.round(2)%>,<%= @user.calculate_coordinator_score.round(2)%>,<%= @user.calculate_facilitator_score.round(2)%>,<%= @user.calculate_mentor_score.round(2)%>]
+					}
+				]
+			}
+			var ctx = document.getElementById("myChart").getContext("2d");
+			new Chart(ctx).Radar(data,{});
+	</script>
 
